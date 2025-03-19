@@ -44,4 +44,10 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'database_cleaner-active_record'
+  gem 'simplecov', require: false
+  
 end
+gem "database_cleaner", "~> 2.1"

@@ -3,6 +3,9 @@ class TodosController < ApplicationController
 
   def index
     @todos = Todo.all
+    # Apply filters if query parameters are present
+    @todos = @todos.where("title LIKE ?", "%#{params[:title]}%") if params[:title].present?
+    @todos = @todos.where(completed: params[:completed]) if params[:completed].present?
     render json: @todos
   end
 
